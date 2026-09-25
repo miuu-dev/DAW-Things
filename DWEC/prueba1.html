@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let nombre = "Emilio"
+        console.log("Hola, me llamo " + nombre)        
+
+        // con la , nos aseguramos que tenemos un espacio entre el string con la variable
+        console.log("Hola, me llamo" , nombre)
+
+        // con las comillas graves (`) no hace falta que nos preocupemos por las comillas dobles a la hora de abrir y cerrar. Además, tampoco nos preocuparemos con concatenar las variables ya que podemos poner ${nomnre_variable}
+        console.log(`Hola, me llamo ${nombre}`)
+
+        // también podemos realizar operaciones directamente
+        console.log(`Cada día tiene ${24*60*60} segundos`)
+
+        // en una variables string podemos poner un salto de linea
+        let texto = "una línea \ndos líneas \ttabulación"
+        console.log(texto)
+
+        // podemos meter emoticonos
+        let lazo = "\u{2A1D}"
+        let raton = "\u{0B1B}"
+        console.log(`Tenemos un ${raton} con un ${lazo}`);
+        
+        // booleanos
+        let x = 2;
+        let y = 5;
+        let b = (x>y)
+        console.log(`¿Es ${x} mayor qué ${y}? ${b}`);
+        
+        // comprobamos con comillas si es igual. De esta forma con solo == lo considera que es igual aunque no sean del mismo tipo, pero si ponemos 3=, dirá false
+        console.log("2"==2)
+        console.log("2"===2);
+        
+        // podemos hacer if o de forma ternaria
+        let edad = 19
+        /* if (edad>=18){
+            console.log(`Es mayor de edad`);
+        } else {
+            console.log(`Es menor de edad`);
+        } */
+        // console.log((edad>=18)?"Mayor de edad":"Menor de edad");
+        let esMayor = ((edad>=18)?"Mayor de edad":"Menor de edad")
+        console.log(esMayor);
+        
+        // parseInt ("Num Binario", su base (2 de binario))
+        console.log(parseInt("101101",2));
+        console.log(parseInt("1BC3", 16)); // con hexadecimal
+        console.log(parseInt("302",8)); // con octal    
+        
+        // no es un número
+        console.log(isNaN("Hola"*5)); // comprueba que hola no es un número
+        console.log(isNaN("3"*5)); // devuelve false porque aunque el 3 esté en las comillas, lo considera como un número        
+        
+    </script>
+</body>
+</html>
