@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Callback</title>
+    <link rel="icon" href="../../img/miuuLogo.png">
+</head>
+
+<body>
+    <script>
+        let array1 = ["oso", "marsopa", "Águila", "Ñu", "boa", "Nutria"];
+
+        function ordenPersonal(a, b) {
+            return a.length - b.length;
+        }
+
+        // 1. Función con nombre como callback
+        // console.log([...array1].sort(ordenPersonal));
+
+        // 2. Función anónima
+        // console.log([...array1].sort(function (a, b) { return a.length - b.length; }));
+
+        // 3. Función flecha
+        // console.log([...array1].sort((a, b) => a.length - b.length));
+
+        // 4. Función guardada en una variable
+        let miFuncion = function (a, b) {
+            return a.length - b.length;
+        };
+
+        array1.sort((a,b)=>a.localeCompare(b))
+
+        // array1.sort(miFuncion)
+        console.log(array1);
+    </script>
+</body>
+
+</html>
