@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+@mixin boton($fondo, $texto) {
+    background-color: $fondo;
+    color: $texto;
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 20px;
+    border: 2px transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@mixin seccion($vertical: 80px) {
+    padding: $vertical;
+}
+
+@mixin aspecto($modo) {
+    @if $modo == 'oscuro' {
+        background-color: $espresso;
+        color: $blanco;
+    } @else if $modo == 'claro' {
+        background-color: $crema;
+        color: $tinta;
+    } @else {
+        @warn("Tema no válido");
+        background-color: white;
+        color: black;
+    }
+}

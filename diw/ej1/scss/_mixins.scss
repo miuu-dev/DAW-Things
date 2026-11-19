@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+@mixin boton($bg, $color) {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+}
+
+@mixin espaciado-seccion($py: 80px) {
+    padding-block: $py;
+}
+
+@mixin tema($variante) {
+    @if $variante == 'noche' {
+        background-color: $oscuro;
+    } @else if $variante == 'dia' {
+        background-color: $fondo;
+        color: $texto;
+    } @else {
+        @warn("Tema no válido");
+        background-color: $blanco;
+        color: $texto;
+    }
+}

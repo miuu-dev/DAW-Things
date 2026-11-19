@@ -1,0 +1,31 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+%etiqueta-base {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+@each $clave, $valor in v.$intensidad {
+    .etiqueta-intensidad--#{$clave} {
+        @extend %etiqueta-base;
+        color: $valor;
+        background-color: v.$crema;
+    }
+}
+
+@for $i from 1 through 3 {
+    .espacio--#{$i}{
+        margin-top: $i * v.$unidad;
+    }
+}
+
+.boton--claro {
+    @include m.boton(v.$caramelo, v.$espresso);
+}
+
+.boton--oscuro {
+    @include m.boton(v.$espresso, v.$caramelo);
+}

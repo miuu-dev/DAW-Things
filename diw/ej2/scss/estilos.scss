@@ -1,0 +1,429 @@
+@use 'variables' as *;
+@use 'mixins' as m;
+@use 'funciones' as f;
+@use 'utilidades' as u;
+
+// Bloque A – Base
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $crema;
+    color: $tinta;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.envoltura {
+    width: 92%;
+    max-width: $maximo;
+    margin: auto;
+}
+
+.sobrelinea {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.cabecera-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    gap: 30px;
+    margin-bottom: 38px;
+
+    h2 {
+        margin: 0;
+        font-size: f.rem(40);
+    }
+
+    p {
+        max-width: 290px;
+        color: $muted;
+        margin: 0;
+    }
+}
+
+
+// Bloque B – Barra Superior
+.barra-superior {
+    background-color: $crema;
+    border-bottom: 1px solid $linea;
+
+    &__interior {
+        display: flex;
+        min-height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+    }
+}
+
+.logotipo {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+    color: inherit;
+
+    &__icono {
+        color: $tostado;
+        font-size: 28px;
+    }
+}
+
+.navegacion {
+    display: flex;
+    gap: 28px;
+
+    a {
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: $tostado;
+        }
+    }
+}
+
+.enlace-acceso {
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid $tinta;
+    padding-bottom: 5px;
+}
+
+
+// Bloque C – Portada
+.portada {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 560px;
+    margin-top: 32px;
+    border-radius: $radio;
+    overflow: hidden;
+    background-color: $espresso;
+    color: $blanco;
+
+    &__contenido {
+        display: flex;
+        flex-direction: column;
+        padding: 56px;
+    }
+
+    h1 {
+        font-size: f.rem(60);
+        margin: 0 0 24px;
+
+        em {
+            color: $caramelo;
+        }
+    }
+
+    &__acciones {
+        display: flex;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    &__imagen {
+        background: linear-gradient(135deg, $tostado, $caramelo);
+    }
+
+    &__cifras {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: auto;
+
+        div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            strong {
+                font-size: 28px;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+// Bloque D – Catálogo
+.catalogo {
+    @include m.seccion();
+
+    &__distribucion {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        column-gap: 24px;
+    }
+}
+
+.filtros {
+    background-color: $blanco;
+    border: 1px solid $linea;
+    border-radius: $radio;
+    padding: 24px;
+
+    h3 {
+        font-size: 28px;
+        margin-top: 0;
+    }
+
+    fieldset {
+        border: 0;
+        border-top: 1px solid $linea;
+        margin: 20px;
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0;
+            font-size: 14px;
+        }
+    }
+
+    &__nota {
+        background-color: $crema;
+        padding: 15px 12px;
+    }
+}
+
+.cafes {
+    display: grid;
+    gap: 18px;
+}
+
+.cafe {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 210px;
+    background-color: $blanco;
+    border: 1px solid $linea;
+    border-radius: $radio;
+    overflow: hidden;
+
+    &--principal {
+        border: 2px solid $tostado;
+    }
+
+    &__foto {
+        background-size: cover;
+        margin: 0;
+
+        &--etiopia {
+            background-color: #c9a46a;
+        }
+
+        &--colombia {
+            background-color: #8a5a3c;
+        }
+
+        &--brasil {
+            background-color: #3b2a20;
+        }
+    }
+
+    &__cuerpo {
+        padding: 24px;
+    }
+
+    &__encabezado {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    p {
+        color: $muted;
+        font-size: 16px;
+    }
+
+    &__enlace {
+        color: $tostado;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+// Bloque E – Recomendación
+.recomendacion {
+    @include m.aspecto('oscuro');
+
+    &__interior {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__visual {
+        background-color: $tostado;
+    }
+
+    &__texto {
+        padding: 48px;
+    }
+
+    h2 {
+        color: $caramelo;
+        font-size: f.rem(46);
+        margin: 0 0 32px;
+    }
+}
+
+
+// Bloque F – Agenda
+.agenda {
+    @include m.seccion(88px);
+
+    &__lista {
+        list-style: none; // sin viñetas
+        padding: 0;
+        border-top: 1px solid $linea;
+    }
+
+    &__evento {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        column-gap: 24px;
+        align-items: center;
+        padding: 24px;
+        border-bottom: 1px solid $linea;
+    }
+
+    &__fecha {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        strong {
+            font-size: 40px;
+        }
+
+        span {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    &__tipo {
+        font-size: 12px;
+        font-weight: bold;
+        color: $tostado;
+        margin: 5px 0;
+    }
+
+    p {
+        color: $muted;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    &__flecha {
+        font-size: 28px;
+        text-align: right;
+    }
+}
+
+
+// Bloque G – Pie
+.pie {
+    background-color: $espresso;
+    color: $blanco;
+    padding: 24px 0;
+
+    &__interior {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
+
+// Responsive
+// Tablet
+@media (min-width: 701px) and (max-width: 1024px) {
+
+    .barra-superior__interior,
+    .navegacion {
+        flex-wrap: wrap;
+    }
+
+    .portada__contenido {
+        padding: 36px;
+    }
+
+    .recomendacion__texto {
+        padding: 32px;
+    }
+
+    .catalogo__distribucion {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Móvil
+@media (max-width: 700px) {
+
+    .barra-superior__interior,
+    .cabecera-seccion,
+    .pie__interior {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navegacion {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .portada,
+    .recomendacion__interior,
+    .cafe,
+    .agenda__evento {
+        grid-template-columns: 1fr;
+    }
+
+    .portada__imagen,
+    .recomendacion__visual,
+    .cafe__foto {
+        min-height: 200px;
+    }
+
+    .portada h1 {
+        font-size: f.rem(36);
+    }
+
+    .cabecera-seccion h2,
+    .recomendacion h2 {
+        font-size: f.rem(30);
+    }
+
+    .portada__contenido,
+    .recomendacion__texto {
+        padding: 24px;
+    }
+}

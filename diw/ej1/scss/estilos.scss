@@ -1,0 +1,213 @@
+@use "_variables.scss" as *;
+@use "_funciones.scss" as f;
+@use "_mixins.scss" as m;
+@use "_utilidades.scss" as u;
+
+// Base
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $fondo;
+    color: $texto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: $ancho-max;
+    margin: auto;
+}
+
+// Cabecera
+.cabecera {
+    background-color: $blanco;
+    border-bottom: 1px solid $borde;
+
+    &__interior {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 80px;
+        gap: 20px;
+    }
+}
+
+.marca {
+    font-weight: 900;
+    font-size: 22px;
+    text-decoration: none;
+    color: $texto;
+
+    &__punto {
+        color: $primario;
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+
+    a {
+        text-decoration: none;
+        color: $texto;
+        font-weight: bold;
+
+        &:hover {
+            color: $primario;
+        }
+    }
+}
+
+// Hero
+.hero {
+    @include m.tema('noche');
+    @include m.espaciado-seccion(60px);
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: f.a-rem(54);
+        margin: 16px 0;
+
+        em {
+            color: $neon;
+            font-style: normal;
+        }
+    }
+
+    &__imagen {
+        background: url("../assets/hero.svg") center/cover no-repeat;
+        border-radius: $curva;
+        min-height: 320px;
+    }
+}
+
+// Escaparate
+.escaparate {
+    @include m.espaciado-seccion();
+
+    &__rejilla {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+.titulo-bloque {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+
+    h2 {
+        margin: 0;
+        font-size: f.a-rem(36);
+    }
+
+    p {
+        margin: 0;
+        color: $gris;
+    }
+}
+
+.tarjeta {
+    background-color: $blanco;
+    border: 1px solid $borde;
+    border-radius: $curva;
+    overflow: hidden;
+
+    &--destacada {
+        border: 2px solid $primario;
+    }
+
+    &__media {
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+
+        &--gpu {
+            background-image: url("../assets/gpu.svg");
+        }
+
+        &--cpu {
+            background-image: url("../assets/cpu.svg");
+        }
+    }
+
+    &__contenido {
+        padding: 24px;
+
+        h3 {
+            font-size: 22px;
+            margin: 12px 0;
+        }
+
+        p {
+            color: $gris;
+        }
+    }
+
+    &__enlace {
+        color: $primario;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Pie
+.pie-pagina {
+    background-color: $oscuro;
+    color: $blanco;
+    padding: 24px 0;
+
+    &__interior {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+// Responsive
+@media (min-width: 701px) and (max-width: 1024px) {
+    .cabecera__interior {
+        flex-wrap: wrap;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .cabecera__interior,
+    .titulo-bloque,
+    .pie-pagina__interior {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .hero__grid,
+    .escaparate__rejilla {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: f.a-rem(34);
+    }
+
+    .hero__imagen {
+        min-height: 220px;
+    }
+}

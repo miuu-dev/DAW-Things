@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRANO - Tostadores de café</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header class="barra-superior">
+    <div class="envoltura barra-superior__interior">
+        <a class="logotipo" href="#"><span class="logotipo__icono">●</span> GRANO</a>
+        <nav class="navegacion">
+            <a href="#cafes">Cafés</a>
+            <a href="#recomendacion">Recomendación</a>
+            <a href="#catas">Catas</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a class="enlace-acceso" href="#">Mi cuenta</a>
+    </div>
+</header>
+
+<main>
+    <!-- PORTADA -->
+    <section class="envoltura portada">
+        <div class="portada__contenido">
+            <p class="sobrelinea">TOSTADORES DESDE 2012</p>
+            <h1>Café que se <em>saborea</em> despacio</h1>
+            <p>Tostamos en pequeños lotes granos de origen único para que cada taza cuente una historia.</p>
+            <div class="portada__acciones">
+                <a class="boton--claro" href="#cafes">Ver cafés</a>
+                <a class="boton--oscuro" href="#catas">Reservar cata</a>
+            </div>
+            <div class="portada__cifras">
+                <div><strong>12</strong> <span>ORÍGENES</span></div>
+                <div><strong>48h</strong> <span>DESDE EL TOSTADO</span></div>
+                <div><strong>4,9</strong> <span>VALORACIÓN MEDIA</span></div>
+            </div>
+        </div>
+        <div class="portada__imagen"></div>
+    </section>
+
+    <!-- CATALOGO -->
+    <section class="envoltura catalogo" id="cafes">
+        <div class="cabecera-seccion">
+            <h2>Nuestros cafés</h2>
+            <p>Selección de temporada, tostado a diario en nuestro obrador.</p>
+        </div>
+
+        <div class="catalogo__distribucion">
+            <aside class="filtros">
+                <h3>Filtrar</h3>
+                <fieldset>
+                    <legend>Intensidad</legend>
+                    <label><input type="checkbox"> Suave</label>
+                    <label><input type="checkbox"> Media</label>
+                    <label><input type="checkbox"> Fuerte</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Formato</legend>
+                    <label><input type="checkbox"> Grano</label>
+                    <label><input type="checkbox"> Molido</label>
+                </fieldset>
+                <p class="filtros__nota">Envío gratis a partir de 30 €.</p>
+            </aside>
+
+            <div class="cafes">
+                <article class="cafe cafe--principal">
+                    <div class="cafe__foto cafe__foto--etiopia"></div>
+                    <div class="cafe__cuerpo">
+                        <div class="cafe__encabezado">
+                            <span class="etiqueta-intensidad--suave">SUAVE</span>
+                            <span>250 g</span>
+                        </div>
+                        <h3>Etiopía Yirgacheffe</h3>
+                        <p>Notas florales y de cítricos, con final dulce de miel.</p>
+                        <a class="cafe__enlace" href="#">Ver detalle →</a>
+                    </div>
+                </article>
+
+                <article class="cafe">
+                    <div class="cafe__foto cafe__foto--colombia"></div>
+                    <div class="cafe__cuerpo">
+                        <div class="cafe__encabezado">
+                            <span class="etiqueta-intensidad--media">MEDIA</span>
+                            <span>250 g</span>
+                        </div>
+                        <h3>Colombia Huila</h3>
+                        <p>Caramelo, nuez y cuerpo redondo. Ideal para filtro.</p>
+                        <a class="cafe__enlace" href="#">Ver detalle →</a>
+                    </div>
+                </article>
+
+                <article class="cafe">
+                    <div class="cafe__foto cafe__foto--brasil"></div>
+                    <div class="cafe__cuerpo">
+                        <div class="cafe__encabezado">
+                            <span class="etiqueta-intensidad--fuerte">FUERTE</span>
+                            <span>500 g</span>
+                        </div>
+                        <h3>Brasil Cerrado</h3>
+                        <p>Chocolate negro y tostado intenso. Perfecto para espresso.</p>
+                        <a class="cafe__enlace" href="#">Ver detalle →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECOMENDACION -->
+    <section class="recomendacion" id="recomendacion">
+        <div class="recomendacion__interior">
+            <div class="recomendacion__visual"></div>
+            <div class="recomendacion__texto">
+                <p class="sobrelinea">RECOMENDACIÓN DEL MES</p>
+                <h2>Prueba el Etiopía en V60</h2>
+                <p>Agua a 92 °C, molienda media y 2 minutos y medio de extracción.</p>
+                <a class="boton--claro" href="#">Comprar ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="envoltura agenda" id="catas">
+        <div class="cabecera-seccion">
+            <h2>Próximas catas</h2>
+            <p>Plazas limitadas. Reserva con antelación.</p>
+        </div>
+        <ul class="agenda__lista">
+            <li class="agenda__evento">
+                <div class="agenda__fecha"><strong>07</strong><span>DIC</span></div>
+                <div>
+                    <p class="agenda__tipo">INICIACIÓN</p>
+                    <h3>Cata de tres orígenes</h3>
+                    <p>Sábado, 11:00 h · Obrador GRANO</p>
+                </div>
+                <span class="agenda__flecha">→</span>
+            </li>
+            <li class="agenda__evento">
+                <div class="agenda__fecha"><strong>14</strong><span>DIC</span></div>
+                <div>
+                    <p class="agenda__tipo">AVANZADO</p>
+                    <h3>Métodos de filtrado</h3>
+                    <p>Sábado, 12:00 h · Obrador GRANO</p>
+                </div>
+                <span class="agenda__flecha">→</span>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer class="pie" id="contacto">
+    <div class="envoltura pie__interior">
+        <span>© 2026 GRANO Tostadores</span>
+        <span>hola@grano.example</span>
+    </div>
+</footer>
+
+</body>
+</html>

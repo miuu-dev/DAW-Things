@@ -1,0 +1,33 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+%badge-base {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@each $clave, $valor in v.$estados {
+    .badge-estado--#{$clave} {
+        @extend %badge-base;
+        color: $valor;
+        background-color: v.$fondo;
+    }
+}
+
+@for $i from 1 through 3 {
+    .margen-top--#{$i} {
+        margin-top: $i * v.$paso;
+    }
+}
+
+.boton--primario {
+    @include m.boton(v.$primario, v.$blanco);
+}
+
+.boton--secundario {
+    @include m.boton(v.$neon, v.$oscuro);
+}
+
